@@ -5,7 +5,5 @@ require_relative 'bank'
 require_relative 'interface'
 
 interface = Interface.new
-dealer = Dealer.new
-user = User.new
-game = Game.new(interface, dealer, user)
+game = Game.new(interface)
 game.run

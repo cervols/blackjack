@@ -8,11 +8,18 @@ class Game
 
   def run
     @interface.welcome
+    create_players
     main_menu
   end
 
   private
 
+  def create_players
+    user_name = @interface.ask_user_name
+    user = User.new(user_name)
+    dealer = Dealer.new
+  end
+  
   def start_new_game
     @deck = Deck.new
     make_bets
@@ -31,3 +38,4 @@ class Game
     end
   end
 end
+
