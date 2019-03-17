@@ -5,11 +5,15 @@ class Deck
     @cards = form_deck
   end
 
+  def draw_card
+    [@cards.pop].to_h
+  end
+
   private
 
   def form_deck
-    symbols = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-    suits = ["+", "<3", "<>", "^"]
+    symbols = %w[2 3 4 5 6 7 8 9 10 J Q K A]
+    suits = %w[+ <3 <> ^]
     values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
 
     cards = []
@@ -18,9 +22,5 @@ class Deck
     end
 
     cards.shuffle
-  end
-
-  def draw_card
-    [@cards.pop].to_h
   end
 end
